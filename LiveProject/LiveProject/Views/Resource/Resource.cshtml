@@ -1,0 +1,72 @@
+﻿@model IEnumerable<LiveProject.Models.Resource>
+
+
+@{
+    ViewBag.Title = "Resource";
+
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shCk1k/dQMI/cF+Q7DtcxhqXvcqruXWfdfwnJ" crossorigin="anonymous">
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div class="card mb-4 mt-5">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        <span class="fs-5">Resource</span>
+        <button class="btn btn-primary float-end">
+            @Html.ActionLink("Add New", "ResourceAdd", null, new { @class = "text-decoration-none text-white" })
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Technology Group</th>
+                        <th>Primary Technology</th>
+                        <th>Secondary Technology</th>
+                        <th>Designation</th>
+                        <th>Role</th>
+                        <th>isActive</th>
+                        <th>Actions</th> <!-- Added Actions column -->
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int i = 1;}
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            @{ i++;}
+                            <td>@item.resName</td>
+                            <td>@item.resDepartment</td>
+                            <td>@item.technologyGroup1.techGroupName</td>
+                            <td>@item.Technology.techName</td>
+                            <td>@item.Technology1.techName</td>
+                            <td>@item.Designation1.desigName</td>
+                            <td>@item.Role.roleName</td>
+                            <td>@item.isActive</td>
+                            <td>
+                                <input type="button" value="Edit" class="btn btn-primary ms-1" onclick="location.href='@Url.Action("ResourceEdit", "Resource", new { id = item.resId })'" />
+                                <input type="button" value="Delete" class="btn btn-danger ms-1" onclick="confirmDelete('@Url.Action("ResourceDelete", "Resource", new { id = item.resId })')" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function confirmDelete(url) {
+        if (confirm('Are you sure you want to delete this record?')) {
+            window.location.href = url;
+        }
+    }</script>

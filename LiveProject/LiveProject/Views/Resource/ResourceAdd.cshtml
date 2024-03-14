@@ -1,0 +1,107 @@
+﻿@model LiveProject.Models.Resource
+
+@{
+    ViewBag.Title = "Resource";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shCk1k/dQMI/cF+Q7DtcxhqXvcqruXWfdfwnJ" crossorigin="anonymous">
+
+
+<h3 class="mt-4">Create</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<div class="container border border-2 border-secondary rounded-2 w-75 mt-3 ms-0">
+    <div class="row mt-4 ms-3">
+        <div class="col-md-5">
+            <div class="form-group fw-bold">
+                @Html.LabelFor(model => model.resName)
+                <label class="text-danger">*</label>
+                @Html.EditorFor(model => model.resName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.resName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group fw-bold mt-3">
+                @Html.LabelFor(model => model.resDepartment)
+                <label class="text-danger">*</label>
+                @Html.EditorFor(model => model.resDepartment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.resDepartment, "", new { @class = "text-danger" })
+            </div>
+            @{
+                List<SelectListItem> data2 = ViewBag.designationList;
+            }
+            <div class="form-group fw-bold mt-3">
+                @Html.LabelFor(model => model.designation)
+                <label class="text-danger">*</label>
+                @Html.DropDownListFor(model => model.designation, data2, "---Select---", new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.designation, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @{
+                    List<SelectListItem> data1 = ViewBag.roleList;
+                }
+                <div class="form-group fw-bold mt-3">
+                    @Html.LabelFor(model => model.resRole)
+                    <label class="text-danger">*</label>
+                    @Html.DropDownListFor(model => model.resRole, data1, "---Select---", new { @class = "form-control " })
+                    @Html.ValidationMessageFor(model => model.resRole, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            @{
+                List<SelectListItem> data = ViewBag.technologyList;
+            }
+            <div class="form-group fw-bold">
+                @Html.LabelFor(model => model.technologyGroup)
+                <label class="text-danger">*</label>
+                @Html.DropDownListFor(model => model.technologyGroup, data, "---Select---", new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.technologyGroup, "", new { @class = "text-danger" })
+            </div>
+            @{
+                List<SelectListItem> data4 = ViewBag.technologiesList;
+            }
+            <div class="form-group fw-bold mt-3">
+                @Html.LabelFor(model => model.primaryTechnology)
+                <label class="text-danger">*</label>
+                @Html.DropDownListFor(model => model.primaryTechnology, data4, "---Select---", new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.primaryTechnology, "", new { @class = "text-danger" })
+            </div>
+            @{
+                List<SelectListItem> data5 = ViewBag.technologiList;
+            }
+            <div class="form-group fw-bold mt-3">
+                @Html.LabelFor(model => model.secondaryTechnology)
+                <label class="text-danger">*</label>
+                @Html.DropDownListFor(model => model.secondaryTechnology, data5, "---Select---", new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.secondaryTechnology, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group fw-bold mt-3">
+                @Html.LabelFor(model => model.isActive)
+                <div class="checkbox">
+                    @Html.CheckBox("isActive")
+                    @Html.ValidationMessageFor(model => model.isActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group mt-4">
+                <input type="submit" value="Create" class="btn btn-primary ms-4 mb-3" />
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-zqAo7jEpbD/Ov4k6vBtc3gejB3O0P1TPB50k4pB/vvXbJm2QYqzrjpwW0qjnWLaC" crossorigin="anonymous"></script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

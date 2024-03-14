@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LiveProjectModelStoreContainer" CdmEntityContainer="LiveProjectEntities">
+    <EntitySetMapping Name="Allocations">
+      <EntityTypeMapping TypeName="LiveProjectModel.Allocation">
+        <MappingFragment StoreEntitySet="Allocation">
+          <ScalarProperty Name="allocId" ColumnName="allocId" />
+          <ScalarProperty Name="projId" ColumnName="projId" />
+          <ScalarProperty Name="resId" ColumnName="resId" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="allocation1" ColumnName="allocation" />
+          <ScalarProperty Name="isBillable" ColumnName="isBillable" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="technology" ColumnName="technology" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="LiveProjectModel.Designation">
+        <MappingFragment StoreEntitySet="Designation">
+          <ScalarProperty Name="designId" ColumnName="designId" />
+          <ScalarProperty Name="desigName" ColumnName="desigName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="enable" ColumnName="enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="LiveProjectModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="projId" ColumnName="projId" />
+          <ScalarProperty Name="projName" ColumnName="projName" />
+          <ScalarProperty Name="projManager" ColumnName="projManager" />
+          <ScalarProperty Name="technology" ColumnName="technology" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="LiveProjectModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="regId" ColumnName="regId" />
+          <ScalarProperty Name="regName" ColumnName="regName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="LiveProjectModel.Resource">
+        <MappingFragment StoreEntitySet="Resources">
+          <ScalarProperty Name="resId" ColumnName="resId" />
+          <ScalarProperty Name="resName" ColumnName="resName" />
+          <ScalarProperty Name="resDepartment" ColumnName="resDepartment" />
+          <ScalarProperty Name="technologyGroup" ColumnName="technologyGroup" />
+          <ScalarProperty Name="primaryTechnology" ColumnName="primaryTechnology" />
+          <ScalarProperty Name="secondaryTechnology" ColumnName="secondaryTechnology" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="resRole" ColumnName="resRole" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="LiveProjectModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="enable" ColumnName="enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Technologies">
+      <EntityTypeMapping TypeName="LiveProjectModel.Technology">
+        <MappingFragment StoreEntitySet="Technology">
+          <ScalarProperty Name="techId" ColumnName="techId" />
+          <ScalarProperty Name="techName" ColumnName="techName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="enable" ColumnName="enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="technologyGroups">
+      <EntityTypeMapping TypeName="LiveProjectModel.technologyGroup">
+        <MappingFragment StoreEntitySet="technologyGroup">
+          <ScalarProperty Name="techGroupId" ColumnName="techGroupId" />
+          <ScalarProperty Name="techGroupName" ColumnName="techGroupName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="enable" ColumnName="enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

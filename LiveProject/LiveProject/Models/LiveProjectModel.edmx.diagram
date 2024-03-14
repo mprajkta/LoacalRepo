@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d2bee4eea6b494c845e5041e619db60" Name="Diagram1">
+        <EntityTypeShape EntityType="LiveProjectModel.Allocation" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.Designation" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.Project" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.Registration" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.Resource" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.Role" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.Technology" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveProjectModel.technologyGroup" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="LiveProjectModel.FK__Allocatio__projI__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Allocatio__resId__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Allocatio__techn__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Allocation__role__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Resources__desig__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Project__projMan__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Project__technol__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Resources__prima__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Resources__resRo__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Resources__secon__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="LiveProjectModel.FK__Resources__techn__5441852A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
